@@ -265,3 +265,318 @@
 2026-03-06 16:26:12.688 | INFO     | __main__:<module>:9 - ETL proces afgerond, alle connecties gesloten.
 2026-03-06 16:26:12.688 | INFO     | __main__:<module>:9 - ETL proces afgerond, alle connecties gesloten.
 2026-03-06 16:26:12.688 | INFO     | __main__:<module>:9 - ETL proces afgerond, alle connecties gesloten.
+2026-03-19 16:03:16,641 - INFO - SDM-schema ontbreekt; schema wordt opnieuw opgebouwd vanuit BikeToDrive_RIM - SDM.txt
+2026-03-19 16:03:16,790 - INFO - Reset van SDM is klaar.
+2026-03-19 16:03:16,793 - INFO - Start sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:03:16,802 - INFO - Start sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:03:16,810 - INFO - Start sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:03:16,820 - INFO - Start sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:03:16,828 - INFO - Start sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:03:16,835 - INFO - Start sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:03:16,844 - INFO - Start sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:03:16,852 - INFO - Start sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:03:16,860 - INFO - Start sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:03:16,871 - INFO - Start sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:03:16,879 - INFO - Start sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:03:16,888 - INFO - Start sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:03:16,896 - INFO - Start sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:03:16,903 - INFO - Start sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:03:16,912 - INFO - Start sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:03:16,920 - INFO - Start sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:03:16,932 - INFO - Start sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:03:16,943 - INFO - Start sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:03:16,951 - INFO - Start sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:03:16,959 - INFO - Start sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:03:16,967 - INFO - Start sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:03:16,974 - INFO - Start sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:03:16,984 - INFO - Start sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:03:17,000 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:04:56,854 - INFO - Reset van SDM is klaar.
+2026-03-19 16:04:56,856 - INFO - Start sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:04:56,863 - INFO - Start sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:04:56,868 - INFO - Start sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:04:56,875 - INFO - Start sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:04:56,881 - INFO - Start sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:04:56,888 - INFO - Start sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:04:56,894 - INFO - Start sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:04:56,899 - INFO - Start sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:04:56,905 - INFO - Start sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:04:56,913 - INFO - Start sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:04:56,918 - INFO - Start sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:04:56,924 - INFO - Start sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:04:56,930 - INFO - Start sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:04:56,935 - INFO - Start sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:04:56,942 - INFO - Start sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:04:56,948 - INFO - Start sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:04:56,957 - INFO - Start sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:04:56,968 - INFO - Start sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:04:56,983 - INFO - Start sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:04:56,991 - INFO - Start sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:04:56,996 - INFO - Start sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:04:57,002 - INFO - Start sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:04:57,010 - INFO - Start sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:04:57,022 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:20:35,403 - INFO - Reset van SDM is klaar.
+2026-03-19 16:20:35,590 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:20:35,601 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:20:35,610 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:20:35,620 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:20:35,631 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:20:35,640 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:20:35,651 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:20:35,661 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:20:35,670 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:20:35,684 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:20:35,693 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:20:35,701 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:20:35,713 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:20:35,722 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:20:35,732 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:20:35,740 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:20:35,751 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:20:35,762 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:20:35,770 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:20:35,780 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:20:35,788 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:20:35,797 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:20:35,807 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:20:35,822 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:37,307 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:37,489 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:37,500 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:37,510 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:37,520 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:37,530 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:37,541 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:37,551 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:37,560 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:37,570 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:37,582 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:37,591 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:37,601 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:37,611 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:37,620 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:37,629 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:37,638 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:37,650 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:37,661 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:37,670 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:37,679 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:37,688 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:37,697 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:37,712 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:37,728 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:38,262 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:38,468 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:38,480 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:38,490 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:38,500 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:38,513 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:38,525 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:38,535 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:38,546 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:38,557 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:38,571 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:38,585 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:38,595 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:38,605 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:38,615 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:38,626 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:38,635 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:38,648 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:38,659 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:38,669 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:38,679 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:38,688 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:38,697 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:38,711 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:38,729 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:39,291 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:39,462 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:39,473 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:39,482 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:39,492 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:39,499 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:39,508 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:39,518 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:39,527 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:39,534 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:39,544 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:39,552 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:39,560 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:39,568 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:39,578 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:39,586 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:39,594 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:39,604 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:39,613 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:39,620 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:39,627 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:39,634 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:39,641 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:39,650 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:39,663 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:40,006 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:40,126 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:40,135 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:40,142 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:40,151 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:40,160 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:40,168 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:40,177 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:40,185 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:40,193 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:40,204 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:40,212 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:40,220 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:40,229 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:40,237 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:40,246 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:40,254 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:40,265 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:40,275 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:40,282 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:40,291 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:40,298 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:40,306 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:40,315 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:40,332 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:40,693 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:40,824 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:40,833 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:40,840 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:40,849 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:40,859 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:40,868 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:40,876 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:40,885 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:40,893 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:40,902 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:40,911 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:40,918 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:40,925 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:40,932 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:40,940 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:40,947 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:40,957 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:40,966 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:40,973 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:40,980 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:40,987 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:40,993 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:41,003 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:41,016 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:41,349 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:41,455 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:41,463 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:41,471 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:41,479 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:41,487 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:41,495 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:41,503 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:41,512 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:41,518 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:41,527 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:41,535 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:41,541 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:41,549 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:41,558 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:41,566 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:41,573 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:41,583 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:41,592 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:41,601 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:41,608 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:41,614 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:41,622 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:41,631 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:41,644 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:41,971 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:42,077 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:42,085 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:42,094 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:42,102 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:42,112 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:42,120 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:42,127 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:42,134 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:42,141 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:42,150 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:42,157 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:42,164 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:42,171 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:42,179 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:42,186 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:42,193 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:42,203 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:42,211 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:42,218 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:42,225 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:42,232 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:42,240 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:42,250 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:42,262 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:42,635 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:42,750 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:42,760 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:42,769 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:42,778 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:42,787 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:42,796 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:42,803 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:42,812 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:42,821 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:42,830 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:42,838 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:42,844 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:42,852 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:42,860 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:42,869 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:42,877 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:42,886 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:42,895 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:42,902 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:42,912 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:42,919 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:42,928 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:42,938 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:42,951 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
+2026-03-19 16:21:43,509 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:43,606 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:43,615 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:43,624 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:43,633 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:43,641 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:43,650 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:43,660 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:43,669 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:43,677 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:43,689 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:43,697 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:43,704 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:43,711 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:45,682 - INFO - Reset van SDM is klaar.
+2026-03-19 16:21:45,799 - INFO - Sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 16:21:45,810 - INFO - Sync: accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire
+2026-03-19 16:21:45,818 - INFO - Sync: accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop
+2026-03-19 16:21:45,827 - INFO - Sync: accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal
+2026-03-19 16:21:45,835 - INFO - Sync: accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier
+2026-03-19 16:21:45,845 - INFO - Sync: accessoireverkoop.Klant -> Accessoireverkoop_Klant
+2026-03-19 16:21:45,854 - INFO - Sync: accessoireverkoop.Monteur -> Accessoireverkoop_Monteur
+2026-03-19 16:21:45,863 - INFO - Sync: accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire
+2026-03-19 16:21:45,874 - INFO - Sync: accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 16:21:45,887 - INFO - Sync: onderhoud.Fabrikant -> Onderhoud_Fabrikant
+2026-03-19 16:21:45,896 - INFO - Sync: onderhoud.Filiaal -> Onderhoud_Filiaal
+2026-03-19 16:21:45,906 - INFO - Sync: onderhoud.Fiets -> Onderhoud_Fiets
+2026-03-19 16:21:45,917 - INFO - Sync: onderhoud.Monteur -> Onderhoud_Monteur
+2026-03-19 16:21:45,928 - INFO - Sync: onderhoud.Onderhoud -> Onderhoud
+2026-03-19 16:21:45,938 - INFO - Sync: fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant
+2026-03-19 16:21:45,945 - INFO - Sync: fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets
+2026-03-19 16:21:45,957 - INFO - Sync: fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop
+2026-03-19 16:21:45,968 - INFO - Sync: fietsverkoop.Filiaal -> Fietsverkoop_Filiaal
+2026-03-19 16:21:45,975 - INFO - Sync: fietsverkoop.Klant -> Fietsverkoop_Klant
+2026-03-19 16:21:45,983 - INFO - Sync: fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant
+2026-03-19 16:21:45,991 - INFO - Sync: fietsverkoop.Monteur -> Fietsverkoop_Monteur
+2026-03-19 16:21:45,999 - INFO - Sync: fietsverkoop.Fiets -> Fietsverkoop_Fiets
+2026-03-19 16:21:46,010 - INFO - Sync: fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop
+2026-03-19 16:21:46,023 - INFO - Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.
