@@ -1,0 +1,62 @@
+2026-03-05 15:38:16,111 - INFO - Start inladen van Accessoire Inkoop data...
+2026-03-05 15:38:16,112 - INFO - Bezig met: Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-05 15:38:36,045 - INFO - Start inladen van Accessoire Inkoop data...
+2026-03-05 15:38:36,047 - INFO - Bezig met: Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 14:59:39,609 - INFO - Alle databaseverbindingen zijn gesloten.
+2026-03-19 15:00:46,150 - INFO - Alle databaseverbindingen zijn gesloten.
+2026-03-19 15:05:11,878 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoire_Inkoop
+2026-03-19 15:05:11,880 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoire_Inkoop_Accessoire
+2026-03-19 15:05:11,881 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoire_Inkoop_Leverancier
+2026-03-19 15:05:11,883 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 15:05:11,884 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Monteur
+2026-03-19 15:05:11,885 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Accessoire
+2026-03-19 15:05:11,886 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Leverancier
+2026-03-19 15:05:11,887 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Klant
+2026-03-19 15:05:11,888 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Filiaal
+2026-03-19 15:05:11,890 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud
+2026-03-19 15:05:11,891 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud_Monteur
+2026-03-19 15:05:11,893 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud_Filiaal
+2026-03-19 15:05:11,893 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud_Fiets
+2026-03-19 15:05:11,894 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud_Fabrikant
+2026-03-19 15:05:11,895 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fiets_Inkoop
+2026-03-19 15:05:11,896 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fiets_Inkoop_Fiets
+2026-03-19 15:05:11,897 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fiets_Inkoop_Fabrikant
+2026-03-19 15:05:11,898 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Fiets_Verkoop
+2026-03-19 15:05:11,899 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Fiets
+2026-03-19 15:05:11,900 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Fabrikant
+2026-03-19 15:05:11,901 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Monteur
+2026-03-19 15:05:11,902 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Klant
+2026-03-19 15:05:11,904 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Filiaal
+2026-03-19 15:05:11,905 - INFO - Reset van SDM is klaar.
+2026-03-19 15:05:11,906 - INFO - Start met laden van Accessoire Inkoop data
+2026-03-19 15:05:11,938 - INFO - Data geladen in Accessoire_Inkoop_Leverancier: 5 rijen
+2026-03-19 15:05:11,954 - INFO - Data geladen in Accessoire_Inkoop_Accessoire: 13 rijen
+2026-03-19 15:05:11,968 - INFO - Data geladen in Accessoire_Inkoop: 50 rijen
+2026-03-19 15:05:11,969 - INFO - Accessoire Inkoop succesvol geladen
+2026-03-19 15:05:11,970 - INFO - Alle databaseverbindingen zijn gesloten
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Fiets_Verkoop
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Fiets
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Monteur
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Fabrikant
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Klant
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fietsverkoop_Filiaal
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fiets_Inkoop
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fiets_Inkoop_Fiets
+2026-03-19 15:52:13,572 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Fiets_Inkoop_Fabrikant
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud_Monteur
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud_Fiets
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud_Filiaal
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Onderhoud_Fabrikant
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Accessoire_Verkoop
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Accessoire
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Monteur
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Klant
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Leverancier
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoireverkoop_Filiaal
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoire_Inkoop
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoire_Inkoop_Accessoire
+2026-03-19 15:52:13,573 - WARNING - Tabel bestaat niet in SDM en wordt overgeslagen: Accessoire_Inkoop_Leverancier
+2026-03-19 15:52:13,573 - INFO - Reset van SDM is klaar.
+2026-03-19 15:52:13,573 - INFO - Start sync: accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier
+2026-03-19 15:52:13,574 - INFO - Alle databaseverbindingen zijn gesloten.
