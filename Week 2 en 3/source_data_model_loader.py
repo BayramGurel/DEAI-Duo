@@ -1,439 +1,204 @@
-import sqlite3
+from __future__ import annotations
+
 import logging
+import sqlite3
 from pathlib import Path
-from typing import List, Dict, Tuple
+from typing import Iterable
 
-# ============================================================
-# SOURCE DATA MODEL - VULLEN VAN SDM.db
-# ------------------------------------------------------------
-# Dit script is bedoeld voor gebruik in Jupyter Notebook of als
-# los Python-bestand.
-#
-# Gekozen inlaadstrategieën:
-# 1. String-built SQL
-#    - gebruikt voor resetten en voor dynamisch opbouwen van SQL
-# 2. Incremental Data Loading
-#    - gebruikt om inserts, updates en deletes uit de bronnen
-#      over te nemen naar het SDM
-#
-# Het script kan:
-# a. Alle tabellen in SDM.db leegmaken (reset-knop)
-# b. Data uit alle .db-bestanden overzetten naar SDM.db
-# c. Inserts, updates en deletes in de bron synchroniseren
-#
-# Belangrijk:
-# - Het schema van SDM.db moet al bestaan.
-# - De kolommen van bron- en doeltabel moeten inhoudelijk gelijk zijn.
-# ============================================================
+BASE_DIR = Path(__file__).resolve().parent
+SDM_PATH = BASE_DIR / 'SDM.db'
+SCHEMA_PATH = BASE_DIR / 'BikeToDrive_RIM - SDM.txt'
+LOG_PATH = BASE_DIR / 'sdm_etl.log'
 
-# -----------------------------
-# Configuratie
-# -----------------------------
-SDM_PATH = "SDM.db"
-
-SOURCE_DBS: Dict[str, str] = {
-    "accessoireverkoop": "BikeToDrive_1_Accessoireverkoop.db",
-    "fietsverkoop": "BikeToDrive_2_Fietsverkoop.db",
-    "onderhoud": "BikeToDrive_3_Onderhoud.db",
-    "accessoire_inkoop": "BikeToDrive_4_Accessoire_Inkoop.db",
-    "fiets_inkoop": "BikeToDrive_5_Fiets_Inkoop.db",
+SOURCE_DBS = {
+    'accessoire_inkoop': BASE_DIR / 'BikeToDrive_4_Accessoire_Inkoop.db',
+    'accessoireverkoop': BASE_DIR / 'BikeToDrive_1_Accessoireverkoop.db',
+    'onderhoud': BASE_DIR / 'BikeToDrive_3_Onderhoud.db',
+    'fiets_inkoop': BASE_DIR / 'BikeToDrive_5_Fiets_Inkoop.db',
+    'fietsverkoop': BASE_DIR / 'BikeToDrive_2_Fietsverkoop.db',
 }
 
-# Laadvolgorde:
-# eerst oudertabellen, daarna kindtabellen.
-# De pk-kolommen zijn hier de logische sleutels waarmee we records matchen.
-TABLE_MAPPINGS: List[Dict[str, object]] = [
-    # Accessoire Inkoop
-    {"source_db": "accessoire_inkoop", "source_table": "Leverancier", "target_table": "Accessoire_Inkoop_Leverancier", "pk": ["leveranciernr"]},
-    {"source_db": "accessoire_inkoop", "source_table": "Accessoire", "target_table": "Accessoire_Inkoop_Accessoire", "pk": ["accessoirenr"]},
-    {"source_db": "accessoire_inkoop", "source_table": "Accessoire_Inkoop", "target_table": "Accessoire_Inkoop", "pk": ["inkoopnr"]},
-
-    # Accessoireverkoop
-    {"source_db": "accessoireverkoop", "source_table": "Filiaal", "target_table": "Accessoireverkoop_Filiaal", "pk": ["filiaalnr"]},
-    {"source_db": "accessoireverkoop", "source_table": "Leverancier", "target_table": "Accessoireverkoop_Leverancier", "pk": ["leveranciernr"]},
-    {"source_db": "accessoireverkoop", "source_table": "Klant", "target_table": "Accessoireverkoop_Klant", "pk": ["klantnr"]},
-    {"source_db": "accessoireverkoop", "source_table": "Monteur", "target_table": "Accessoireverkoop_Monteur", "pk": ["monteurnr"]},
-    {"source_db": "accessoireverkoop", "source_table": "Accessoire", "target_table": "Accessoireverkoop_Accessoire", "pk": ["accessoirenr"]},
-    {"source_db": "accessoireverkoop", "source_table": "Accessoire_Verkoop", "target_table": "Accessoireverkoop_Accessoire_Verkoop", "pk": ["accessoire_verkoopnr"]},
-
-    # Onderhoud
-    {"source_db": "onderhoud", "source_table": "Fabrikant", "target_table": "Onderhoud_Fabrikant", "pk": ["fabrikantnr"]},
-    {"source_db": "onderhoud", "source_table": "Filiaal", "target_table": "Onderhoud_Filiaal", "pk": ["filiaalnr"]},
-    {"source_db": "onderhoud", "source_table": "Fiets", "target_table": "Onderhoud_Fiets", "pk": ["fietsnr"]},
-    {"source_db": "onderhoud", "source_table": "Monteur", "target_table": "Onderhoud_Monteur", "pk": ["monteurnr"]},
-    {"source_db": "onderhoud", "source_table": "Onderhoud", "target_table": "Onderhoud", "pk": ["onderhoudnr"]},
-
-    # Fiets Inkoop
-    {"source_db": "fiets_inkoop", "source_table": "Fabrikant", "target_table": "Fiets_Inkoop_Fabrikant", "pk": ["fabrikantnr"]},
-    {"source_db": "fiets_inkoop", "source_table": "Fiets", "target_table": "Fiets_Inkoop_Fiets", "pk": ["fietsnr"]},
-    {"source_db": "fiets_inkoop", "source_table": "Fiets_Inkoop", "target_table": "Fiets_Inkoop", "pk": ["inkoopnr"]},
-
-    # Fietsverkoop
-    {"source_db": "fietsverkoop", "source_table": "Filiaal", "target_table": "Fietsverkoop_Filiaal", "pk": ["filiaalnr"]},
-    {"source_db": "fietsverkoop", "source_table": "Klant", "target_table": "Fietsverkoop_Klant", "pk": ["klantnr"]},
-    {"source_db": "fietsverkoop", "source_table": "Fabrikant", "target_table": "Fietsverkoop_Fabrikant", "pk": ["fabrikantnr"]},
-    {"source_db": "fietsverkoop", "source_table": "Monteur", "target_table": "Fietsverkoop_Monteur", "pk": ["monteurnr"]},
-    {"source_db": "fietsverkoop", "source_table": "Fiets", "target_table": "Fietsverkoop_Fiets", "pk": ["fietsnr"]},
-    {"source_db": "fietsverkoop", "source_table": "Fiets_Verkoop", "target_table": "Fietsverkoop_Fiets_Verkoop", "pk": ["fiets_verkoopnr"]},
+TABLE_MAPPINGS = [
+    ('accessoire_inkoop', 'Leverancier', 'Accessoire_Inkoop_Leverancier', ('leveranciernr',)),
+    ('accessoire_inkoop', 'Accessoire', 'Accessoire_Inkoop_Accessoire', ('accessoirenr',)),
+    ('accessoire_inkoop', 'Accessoire_Inkoop', 'Accessoire_Inkoop', ('inkoopnr',)),
+    ('accessoireverkoop', 'Filiaal', 'Accessoireverkoop_Filiaal', ('filiaalnr',)),
+    ('accessoireverkoop', 'Leverancier', 'Accessoireverkoop_Leverancier', ('leveranciernr',)),
+    ('accessoireverkoop', 'Klant', 'Accessoireverkoop_Klant', ('klantnr',)),
+    ('accessoireverkoop', 'Monteur', 'Accessoireverkoop_Monteur', ('monteurnr',)),
+    ('accessoireverkoop', 'Accessoire', 'Accessoireverkoop_Accessoire', ('accessoirenr',)),
+    ('accessoireverkoop', 'Accessoire_Verkoop', 'Accessoireverkoop_Accessoire_Verkoop', ('accessoire_verkoopnr',)),
+    ('onderhoud', 'Fabrikant', 'Onderhoud_Fabrikant', ('fabrikantnr',)),
+    ('onderhoud', 'Filiaal', 'Onderhoud_Filiaal', ('filiaalnr',)),
+    ('onderhoud', 'Fiets', 'Onderhoud_Fiets', ('fietsnr',)),
+    ('onderhoud', 'Monteur', 'Onderhoud_Monteur', ('monteurnr',)),
+    ('onderhoud', 'Onderhoud', 'Onderhoud', ('onderhoudnr',)),
+    ('fiets_inkoop', 'Fabrikant', 'Fiets_Inkoop_Fabrikant', ('fabrikantnr',)),
+    ('fiets_inkoop', 'Fiets', 'Fiets_Inkoop_Fiets', ('fietsnr',)),
+    ('fiets_inkoop', 'Fiets_Inkoop', 'Fiets_Inkoop', ('inkoopnr',)),
+    ('fietsverkoop', 'Filiaal', 'Fietsverkoop_Filiaal', ('filiaalnr',)),
+    ('fietsverkoop', 'Klant', 'Fietsverkoop_Klant', ('klantnr',)),
+    ('fietsverkoop', 'Fabrikant', 'Fietsverkoop_Fabrikant', ('fabrikantnr',)),
+    ('fietsverkoop', 'Monteur', 'Fietsverkoop_Monteur', ('monteurnr',)),
+    ('fietsverkoop', 'Fiets', 'Fietsverkoop_Fiets', ('fietsnr',)),
+    ('fietsverkoop', 'Fiets_Verkoop', 'Fietsverkoop_Fiets_Verkoop', ('fiets_verkoopnr',)),
 ]
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("etl_proces.log", encoding="utf-8"),
-        logging.StreamHandler()
-    ]
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.FileHandler(LOG_PATH, encoding='utf-8'), logging.StreamHandler()],
 )
 
 
-# ============================================================
-# HULPFUNCTIES
-# ============================================================
-
-def q(identifier: str) -> str:
-    """
-    Zet tabel- of kolomnamen veilig tussen quotes.
-    Dit hoort bij de strategie 'String-built SQL'.
-    """
-    return '"' + identifier.replace('"', '""') + '"'
+def quote(name: str) -> str:
+    return '"' + name.replace('"', '""') + '"'
 
 
-def qcol(alias: str, column: str) -> str:
-    """
-    Bouwt een kolomreferentie op met alias, bijvoorbeeld:
-    doel."klantnr"
-    """
-    return f'{alias}.{q(column)}'
+def columns(conn: sqlite3.Connection, table: str) -> list[str]:
+    rows = conn.execute(f'PRAGMA table_info({quote(table)})').fetchall()
+    return [row[1] for row in rows]
 
 
-def get_user_tables(conn: sqlite3.Connection) -> List[str]:
-    """
-    Geeft alle gewone tabellen terug uit de database.
-    """
-    sql = """
-        SELECT name
-        FROM sqlite_master
-        WHERE type = 'table'
-          AND name NOT LIKE 'sqlite_%'
-        ORDER BY name;
-    """
-    return [row[0] for row in conn.execute(sql).fetchall()]
+def table_exists(conn: sqlite3.Connection, table: str) -> bool:
+    sql = "SELECT 1 FROM sqlite_master WHERE type='table' AND name = ?"
+    return conn.execute(sql, (table,)).fetchone() is not None
 
 
-def get_table_columns(conn: sqlite3.Connection, table_name: str) -> List[str]:
-    """
-    Leest alle kolommen van een tabel uit.
-    """
-    sql = f"PRAGMA table_info({q(table_name)});"
-    rows = conn.execute(sql).fetchall()
-    columns = [row[1] for row in rows]
-
-    if not columns:
-        raise ValueError(f"Tabel '{table_name}' bestaat niet.")
-
-    return columns
+def ensure_files_exist(paths: Iterable[Path]) -> None:
+    missing = [str(path) for path in paths if not path.exists()]
+    if missing:
+        raise FileNotFoundError('Ontbrekende bestanden:\n- ' + '\n- '.join(missing))
 
 
-def controleer_bestanden() -> None:
-    """
-    Controleert of SDM.db en alle brondatabases aanwezig zijn.
-    """
-    alle_bestanden = [SDM_PATH, *SOURCE_DBS.values()]
-
-    for db_pad in alle_bestanden:
-        if not Path(db_pad).exists():
-            raise FileNotFoundError(f"Bestand niet gevonden: {db_pad}")
+def ensure_sdm_schema(conn: sqlite3.Connection) -> None:
+    if table_exists(conn, TABLE_MAPPINGS[0][2]):
+        return
+    logging.info('SDM-schema ontbreekt; schema wordt opnieuw opgebouwd vanuit %s', SCHEMA_PATH.name)
+    conn.executescript(SCHEMA_PATH.read_text(encoding='utf-8'))
+    conn.commit()
 
 
-# ============================================================
-# 5a. RESET-KNOP
-# Strategie: String-built SQL
-# ============================================================
-
-def reset_sdm(sdm_conn: sqlite3.Connection) -> None:
-    """
-    Maakt alle tabellen in het SDM leeg.
-
-    We lopen in omgekeerde volgorde door de mappings heen.
-    Daardoor worden child-tabellen eerst geleegd en daarna
-    parent-tabellen. Dat is veiliger als er foreign keys zijn.
-    """
-    bestaande_tabellen = set(get_user_tables(sdm_conn))
-    reset_volgorde = [m["target_table"] for m in reversed(TABLE_MAPPINGS)]
-
-    sdm_conn.execute("PRAGMA foreign_keys = OFF;")
-
+def reset_sdm(conn: sqlite3.Connection) -> None:
+    conn.execute('PRAGMA foreign_keys = OFF')
     try:
-        for tabel in reset_volgorde:
-            if tabel in bestaande_tabellen:
-                sql = f"DELETE FROM {q(tabel)};"
-                logging.info(f"Reset -> {sql}")
-                sdm_conn.execute(sql)
-            else:
-                logging.warning(f"Tabel bestaat niet in SDM en wordt overgeslagen: {tabel}")
-
-        sdm_conn.commit()
-        logging.info("Reset van SDM is klaar.")
+        for _, _, target_table, _ in reversed(TABLE_MAPPINGS):
+            if table_exists(conn, target_table):
+                conn.execute(f'DELETE FROM {quote(target_table)}')
+        conn.commit()
     finally:
-        sdm_conn.execute("PRAGMA foreign_keys = ON;")
+        conn.execute('PRAGMA foreign_keys = ON')
+    logging.info('Reset van SDM is klaar.')
 
 
-# ============================================================
-# 5b. DATA OVERZETTEN NAAR SDM
-# 6. TESTEN VAN INSERTS / UPDATES / DELETES
-# Strategie: Incremental Data Loading
-# ============================================================
-
-def stage_source_in_temp_table(
-    sdm_conn: sqlite3.Connection,
-    source_conn: sqlite3.Connection,
-    source_table: str,
-    target_table: str
-) -> Tuple[str, List[str]]:
-    """
-    Laadt eerst de brondata in een tijdelijke tabel binnen het SDM.
-
-    Waarom dit handig is:
-    - daarna kunnen we in SQL bepalen welke records nieuw zijn
-    - welke gewijzigd zijn
-    - en welke verwijderd moeten worden
-    """
-    target_columns = get_table_columns(sdm_conn, target_table)
-    source_columns = get_table_columns(source_conn, source_table)
-
-    # Dit script gaat ervan uit dat de kolommen inhoudelijk gelijk zijn
-    # tussen bron- en doeltabel.
-    if source_columns != target_columns:
+def stage_source(conn: sqlite3.Connection, source_conn: sqlite3.Connection, source_table: str, target_table: str) -> tuple[str, list[str]]:
+    target_columns = columns(conn, target_table)
+    source_columns = columns(source_conn, source_table)
+    if target_columns != source_columns:
         raise ValueError(
-            f"Kolommen komen niet overeen:\n"
-            f"Bron ({source_table}): {source_columns}\n"
-            f"Doel ({target_table}): {target_columns}"
+            f'Kolommen komen niet overeen voor {source_table} -> {target_table}: '
+            f'{source_columns} != {target_columns}'
         )
 
-    temp_table = f"tmp_{target_table}"
-    column_list = ", ".join(q(col) for col in target_columns)
+    temp_table = f'tmp_{target_table}'
+    column_sql = ', '.join(quote(column) for column in target_columns)
+    placeholders = ', '.join('?' for _ in target_columns)
 
-    # Oude temp-tabel verwijderen als die nog bestaat
-    sdm_conn.execute(f"DROP TABLE IF EXISTS {q(temp_table)};")
-
-    # Nieuwe temp-tabel maken met exact dezelfde kolommen als de doeltabel
-    create_temp_sql = (
-        f"CREATE TEMP TABLE {q(temp_table)} AS "
-        f"SELECT {column_list} FROM {q(target_table)} WHERE 1 = 0;"
+    conn.execute(f'DROP TABLE IF EXISTS {quote(temp_table)}')
+    conn.execute(
+        f'CREATE TEMP TABLE {quote(temp_table)} AS '
+        f'SELECT {column_sql} FROM {quote(target_table)} WHERE 1 = 0'
     )
-    logging.info(f"Stage create -> {create_temp_sql}")
-    sdm_conn.execute(create_temp_sql)
 
-    # Brondata ophalen
-    select_source_sql = f"SELECT {column_list} FROM {q(source_table)};"
-    bron_rijen = source_conn.execute(select_source_sql).fetchall()
-
-    # Brondata in de temp-tabel zetten
-    if bron_rijen:
-        placeholders = ", ".join(["?"] * len(target_columns))
-        insert_temp_sql = (
-            f"INSERT INTO {q(temp_table)} ({column_list}) "
-            f"VALUES ({placeholders});"
+    rows = source_conn.execute(f'SELECT {column_sql} FROM {quote(source_table)}').fetchall()
+    if rows:
+        conn.executemany(
+            f'INSERT INTO {quote(temp_table)} ({column_sql}) VALUES ({placeholders})',
+            rows,
         )
-        sdm_conn.executemany(insert_temp_sql, bron_rijen)
-
     return temp_table, target_columns
 
 
-def build_match_condition(left_alias: str, right_alias: str, pk_columns: List[str]) -> str:
-    """
-    Bouwt een join-conditie op basis van de primaire sleutelkolommen.
-    """
-    return " AND ".join(
-        f"{qcol(left_alias, pk)} = {qcol(right_alias, pk)}"
-        for pk in pk_columns
-    )
+def join_condition(left_alias: str, right_alias: str, keys: tuple[str, ...]) -> str:
+    return ' AND '.join(f'{left_alias}.{quote(key)} = {right_alias}.{quote(key)}' for key in keys)
 
 
-def incremental_sync_table(
-    sdm_conn: sqlite3.Connection,
-    source_conn: sqlite3.Connection,
-    mapping: Dict[str, object]
-) -> None:
-    """
-    Synchroniseert exact één tabel met Incremental Data Loading.
+def sync_table(conn: sqlite3.Connection, source_conn: sqlite3.Connection, mapping: tuple[str, str, str, tuple[str, ...]]) -> None:
+    source_db, source_table, target_table, keys = mapping
+    logging.info('Start sync: %s.%s -> %s', source_db, source_table, target_table)
 
-    Wat gebeurt er:
-    1. Nieuwe records worden toegevoegd
-    2. Gewijzigde records worden bijgewerkt
-    3. Verwijderde records worden ook uit het SDM verwijderd
+    temp_table, all_columns = stage_source(conn, source_conn, source_table, target_table)
+    non_keys = [column for column in all_columns if column not in keys]
+    column_sql = ', '.join(quote(column) for column in all_columns)
+    staged_sql = ', '.join(f'bron.{quote(column)}' for column in all_columns)
+    match_sql = join_condition('bron', 'doel', keys)
 
-    Hiermee kun je stap 6 aantonen:
-    add / update / delete in de bron -> ook zichtbaar in het SDM
-    """
-    source_table = str(mapping["source_table"])
-    target_table = str(mapping["target_table"])
-    pk_columns = list(mapping["pk"])
-
-    temp_table, all_columns = stage_source_in_temp_table(
-        sdm_conn=sdm_conn,
-        source_conn=source_conn,
-        source_table=source_table,
-        target_table=target_table
-    )
-
-    non_pk_columns = [col for col in all_columns if col not in pk_columns]
-
-    col_list = ", ".join(q(col) for col in all_columns)
-    select_temp_cols = ", ".join(qcol("bron", col) for col in all_columns)
-
-    match_bron_doel = build_match_condition("bron", "doel", pk_columns)
-
-    # --------------------------------------------------------
-    # A. Nieuwe records toevoegen
-    # --------------------------------------------------------
-    insert_new_sql = f"""
-        INSERT INTO {q(target_table)} ({col_list})
-        SELECT {select_temp_cols}
-        FROM {q(temp_table)} AS bron
+    conn.execute(f'''
+        INSERT INTO {quote(target_table)} ({column_sql})
+        SELECT {staged_sql}
+        FROM {quote(temp_table)} AS bron
         WHERE NOT EXISTS (
-            SELECT 1
-            FROM {q(target_table)} AS doel
-            WHERE {match_bron_doel}
-        );
-    """
-    logging.info(f"Insert new -> {target_table}")
-    sdm_conn.execute(insert_new_sql)
-
-    # --------------------------------------------------------
-    # B. Gewijzigde records updaten
-    # --------------------------------------------------------
-    if non_pk_columns:
-        # Voor iedere niet-PK kolom bouwen we een update-expressie.
-        set_clause = ", ".join(
-            f'{q(col)} = ('
-            f'SELECT {qcol("bron", col)} '
-            f'FROM {q(temp_table)} AS bron '
-            f'WHERE {match_bron_doel}'
-            f')'
-            for col in non_pk_columns
+            SELECT 1 FROM {quote(target_table)} AS doel WHERE {match_sql}
         )
+    ''')
 
-        # Alleen updaten als minstens één niet-PK kolom anders is.
-        # "IS NOT" werkt in SQLite netjes met NULL-waarden.
-        diff_clause = " OR ".join(
-            f'{qcol("doel", col)} IS NOT ('
-            f'SELECT {qcol("bron", col)} '
-            f'FROM {q(temp_table)} AS bron '
-            f'WHERE {match_bron_doel}'
-            f')'
-            for col in non_pk_columns
+    if non_keys:
+        set_sql = ', '.join(
+            f'{quote(column)} = (SELECT bron.{quote(column)} FROM {quote(temp_table)} AS bron WHERE {match_sql})'
+            for column in non_keys
         )
+        diff_sql = ' OR '.join(
+            f'doel.{quote(column)} IS NOT (SELECT bron.{quote(column)} FROM {quote(temp_table)} AS bron WHERE {match_sql})'
+            for column in non_keys
+        )
+        conn.execute(f'''
+            UPDATE {quote(target_table)} AS doel
+            SET {set_sql}
+            WHERE EXISTS (SELECT 1 FROM {quote(temp_table)} AS bron WHERE {match_sql})
+              AND ({diff_sql})
+        ''')
 
-        update_sql = f"""
-            UPDATE {q(target_table)} AS doel
-            SET {set_clause}
-            WHERE EXISTS (
-                SELECT 1
-                FROM {q(temp_table)} AS bron
-                WHERE {match_bron_doel}
-            )
-              AND ({diff_clause});
-        """
-        logging.info(f"Update changed -> {target_table}")
-        sdm_conn.execute(update_sql)
-
-    # --------------------------------------------------------
-    # C. Records verwijderen die niet meer in de bron voorkomen
-    # --------------------------------------------------------
-    delete_removed_sql = f"""
-        DELETE FROM {q(target_table)} AS doel
+    conn.execute(f'''
+        DELETE FROM {quote(target_table)} AS doel
         WHERE NOT EXISTS (
-            SELECT 1
-            FROM {q(temp_table)} AS bron
-            WHERE {match_bron_doel}
-        );
-    """
-    logging.info(f"Delete removed -> {target_table}")
-    sdm_conn.execute(delete_removed_sql)
-
-    # Temp-tabel opruimen
-    sdm_conn.execute(f"DROP TABLE IF EXISTS {q(temp_table)};")
-    sdm_conn.commit()
-
-    logging.info(f"Incremental sync klaar voor {source_table} -> {target_table}")
+            SELECT 1 FROM {quote(temp_table)} AS bron WHERE {match_sql}
+        )
+    ''')
+    conn.execute(f'DROP TABLE IF EXISTS {quote(temp_table)}')
+    conn.commit()
 
 
-# ============================================================
-# HOOFDFUNCTIES
-# ============================================================
+def load_all_sources(reset_first: bool = False) -> None:
+    ensure_files_exist([SCHEMA_PATH, SDM_PATH, *SOURCE_DBS.values()])
 
-def laad_alle_bronnen_incremental(reset_eerst: bool = False) -> None:
-    """
-    Hoofdfunctie.
-
-    reset_eerst = True:
-        eerst SDM leegmaken, daarna alles opnieuw inladen
-    reset_eerst = False:
-        alleen incremental synchroniseren
-    """
-    controleer_bestanden()
-
-    sdm_conn = sqlite3.connect(SDM_PATH)
-    sdm_conn.execute("PRAGMA foreign_keys = ON;")
-
-    source_conns = {
-        naam: sqlite3.connect(pad)
-        for naam, pad in SOURCE_DBS.items()
-    }
-
-    try:
-        if reset_eerst:
+    with sqlite3.connect(SDM_PATH) as sdm_conn:
+        sdm_conn.execute('PRAGMA foreign_keys = ON')
+        ensure_sdm_schema(sdm_conn)
+        if reset_first:
             reset_sdm(sdm_conn)
 
-        # Deze volgorde is gekozen zodat ouder-tabellen eerder worden geladen
-        # dan kind-tabellen. Dit helpt bij database-overschrijdende associaties
-        # en foreign key-afhankelijkheden.
-        for mapping in TABLE_MAPPINGS:
-            bron_conn = source_conns[str(mapping["source_db"])]
+        source_conns = {name: sqlite3.connect(path) for name, path in SOURCE_DBS.items()}
+        try:
+            for mapping in TABLE_MAPPINGS:
+                sync_table(sdm_conn, source_conns[mapping[0]], mapping)
+        finally:
+            for source_conn in source_conns.values():
+                source_conn.close()
 
-            logging.info(
-                f'Start sync: {mapping["source_db"]}.{mapping["source_table"]} '
-                f'-> {mapping["target_table"]}'
-            )
-
-            incremental_sync_table(
-                sdm_conn=sdm_conn,
-                source_conn=bron_conn,
-                mapping=mapping
-            )
-
-        logging.info("Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.")
-
-    finally:
-        for conn in source_conns.values():
-            conn.close()
-        sdm_conn.close()
-        logging.info("Alle databaseverbindingen zijn gesloten.")
+    logging.info('Alle databronnen zijn succesvol naar het SDM gesynchroniseerd.')
 
 
-def toon_aantallen() -> None:
-    """
-    Handige controlefunctie om snel te zien hoeveel rijen elke SDM-tabel bevat.
-    """
+def count_rows() -> list[tuple[str, int]]:
     with sqlite3.connect(SDM_PATH) as conn:
-        for tabel in get_user_tables(conn):
-            aantal = conn.execute(f"SELECT COUNT(*) FROM {q(tabel)};").fetchone()[0]
-            print(f"{tabel}: {aantal} rijen")
+        tables = [row[0] for row in conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name")]
+        return [(table, conn.execute(f'SELECT COUNT(*) FROM {quote(table)}').fetchone()[0]) for table in tables]
 
 
-# ============================================================
-# UITVOERING
-# ============================================================
-if __name__ == "__main__":
-    # Stap 5:
-    # Eerst het SDM volledig resetten en daarna opnieuw vullen.
-    laad_alle_bronnen_incremental(reset_eerst=True)
+def print_counts() -> None:
+    for table, total in count_rows():
+        print(f'{table}: {total} rijen')
 
-    # Controle van de aantallen.
-    toon_aantallen()
 
-    # Stap 6:
-    # Na het aanpassen van rijen in een bronbestand kun je alleen dit opnieuw draaien:
-    # laad_alle_bronnen_incremental(reset_eerst=False)
+if __name__ == '__main__':
+    load_all_sources(reset_first=True)
+    print_counts()
