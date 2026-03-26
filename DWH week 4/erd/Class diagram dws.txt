@@ -1,0 +1,126 @@
+CLASS DIAGRAM DWH – BikeToDrive
+
+class Fact_Inkoop {
+  +InkoopKey : int
+  +InkoopNr : string
+  +ProductKey : int
+  +PartnerKey : int
+  +DatumKey : int
+  +Aantal : int
+  +Inkoopprijs : decimal
+  +Inkoopbedrag : decimal
+}
+
+class Fact_Verkoop {
+  +VerkoopKey : int
+  +VerkoopNr : string
+  +ProductKey : int
+  +KlantKey : int
+  +MonteurKey : int
+  +FiliaalKey : int
+  +DatumKey : int
+  +Aantal : int
+  +Verkoopprijs : decimal
+  +Omzet : decimal
+  +Brutowinst : decimal
+}
+
+class Fact_Onderhoud {
+  +OnderhoudKey : int
+  +OnderhoudNr : string
+  +ProductKey : int
+  +MonteurKey : int
+  +FiliaalKey : int
+  +DatumKey : int
+  +TijdKey : int
+  +AantalOnderhoud : int
+  +Onderhoudsduur : decimal
+  +Arbeidskosten : decimal
+}
+
+class Dim_Product {
+  +ProductKey : int
+  +ProductNr : string
+  +ProductType : string
+  +Naam : string
+  +Merk : string
+  +Soort : string
+  +Type : string
+  +Kleur : string
+  +Standaardprijs : decimal
+}
+
+class Dim_Partner {
+  +PartnerKey : int
+  +PartnerNr : string
+  +PartnerType : string
+  +Naam : string
+  +Adres : string
+  +Plaats : string
+}
+
+class Dim_Klant {
+  +KlantKey : int
+  +KlantNr : string
+  +Naam : string
+  +Adres : string
+  +Woonplaats : string
+  +Geslacht : string
+  +Geboortedatum : date
+  +Leeftijd : int
+  +Leeftijdscategorie : string
+}
+
+class Dim_Monteur {
+  +MonteurKey : int
+  +MonteurNr : string
+  +Naam : string
+  +Woonplaats : string
+  +Uurloon : decimal
+}
+
+class Dim_Filiaal {
+  +FiliaalKey : int
+  +FiliaalNr : string
+  +Naam : string
+  +Adres : string
+  +Provincie : string
+}
+
+class Dim_Datum {
+  +DatumKey : int
+  +Datum : date
+  +Dag : int
+  +Maand : int
+  +Jaar : int
+  +Kwartaal : int
+  +Weekdag : string
+  +Seizoen : string
+}
+
+class Dim_Tijd {
+  +TijdKey : int
+  +Starttijd : time
+  +Eindtijd : time
+  +Uur : int
+  +Dagdeel : string
+}
+
+
+RELATIES
+
+Fact_Inkoop "*" --> "1" Dim_Product
+Fact_Inkoop "*" --> "1" Dim_Partner
+Fact_Inkoop "*" --> "1" Dim_Datum
+
+Fact_Verkoop "*" --> "1" Dim_Product
+Fact_Verkoop "*" --> "1" Dim_Klant
+Fact_Verkoop "*" --> "1" Dim_Monteur
+Fact_Verkoop "*" --> "1" Dim_Filiaal
+Fact_Verkoop "*" --> "1" Dim_Datum
+
+Fact_Onderhoud "*" --> "1" Dim_Product
+Fact_Onderhoud "*" --> "1" Dim_Monteur
+Fact_Onderhoud "*" --> "1" Dim_Filiaal
+Fact_Onderhoud "*" --> "1" Dim_Datum
+Fact_Onderhoud "*" --> "1" Dim_Tijd
