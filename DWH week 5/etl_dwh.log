@@ -1,0 +1,42 @@
+2026-04-16 23:40:09,405 | INFO | ETL-proces wordt gestart. Dit kan even duren bij grotere datasets.
+2026-04-16 23:40:09,407 | INFO | ETL gestart | bron=C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db | doel=C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:09,408 | INFO | Start schema-initialisatie voor: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:09,409 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:09,476 | INFO | Schema-initialisatie gereed voor: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:09,478 | INFO | Start extractie uit bron: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db
+2026-04-16 23:40:09,479 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db
+2026-04-16 23:40:09,539 | INFO | Extractie afgerond: 10 tabellen opgebouwd
+2026-04-16 23:40:09,543 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:09,597 | INFO | SCD1 geladen voor Dim_Datum: {'new': 202, 'changed': 0, 'unchanged': 0}
+2026-04-16 23:40:09,607 | INFO | SCD1 geladen voor Dim_Tijd: {'new': 9, 'changed': 0, 'unchanged': 0}
+2026-04-16 23:40:09,618 | INFO | SCD1 geladen voor Dim_Partner: {'new': 15, 'changed': 0, 'unchanged': 0}
+2026-04-16 23:40:09,629 | INFO | SCD1 geladen voor Dim_Filiaal: {'new': 5, 'changed': 0, 'unchanged': 0}
+2026-04-16 23:40:09,639 | INFO | SCD1 geladen voor Dim_Monteur: {'new': 15, 'changed': 0, 'unchanged': 0}
+2026-04-16 23:40:09,660 | INFO | SCD2 geladen voor Dim_Product: {'new': 88, 'changed': 0, 'unchanged': 0}
+2026-04-16 23:40:09,676 | INFO | SCD2 geladen voor Dim_Klant: {'new': 25, 'changed': 0, 'unchanged': 0}
+2026-04-16 23:40:09,706 | INFO | Fact geladen voor Fact_Inkoop: {'new': 150, 'existing': 0}
+2026-04-16 23:40:09,728 | INFO | Fact geladen voor Fact_Verkoop: {'new': 251, 'existing': 0}
+2026-04-16 23:40:09,745 | INFO | Fact geladen voor Fact_Onderhoud: {'new': 50, 'existing': 0}
+2026-04-16 23:40:09,747 | INFO | ETL succesvol afgerond
+2026-04-16 23:40:09,751 | INFO | ETL-proces succesvol afgerond. Overzicht wordt getoond.
+2026-04-16 23:40:16,021 | INFO | ETL-proces wordt gestart. Dit kan even duren bij grotere datasets.
+2026-04-16 23:40:16,023 | INFO | ETL gestart | bron=C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db | doel=C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:16,024 | INFO | Start schema-initialisatie voor: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:16,027 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:16,029 | INFO | Schema-initialisatie gereed voor: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:16,030 | INFO | Start extractie uit bron: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db
+2026-04-16 23:40:16,031 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db
+2026-04-16 23:40:16,142 | INFO | Extractie afgerond: 10 tabellen opgebouwd
+2026-04-16 23:40:16,145 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-16 23:40:16,176 | INFO | SCD1 geladen voor Dim_Datum: {'new': 0, 'changed': 0, 'unchanged': 202}
+2026-04-16 23:40:16,194 | INFO | SCD1 geladen voor Dim_Tijd: {'new': 0, 'changed': 0, 'unchanged': 9}
+2026-04-16 23:40:16,211 | INFO | SCD1 geladen voor Dim_Partner: {'new': 0, 'changed': 0, 'unchanged': 15}
+2026-04-16 23:40:16,225 | INFO | SCD1 geladen voor Dim_Filiaal: {'new': 0, 'changed': 0, 'unchanged': 5}
+2026-04-16 23:40:16,241 | INFO | SCD1 geladen voor Dim_Monteur: {'new': 0, 'changed': 0, 'unchanged': 15}
+2026-04-16 23:40:16,259 | INFO | SCD2 geladen voor Dim_Product: {'new': 0, 'changed': 0, 'unchanged': 88}
+2026-04-16 23:40:16,279 | INFO | SCD2 geladen voor Dim_Klant: {'new': 0, 'changed': 0, 'unchanged': 25}
+2026-04-16 23:40:16,298 | INFO | Fact geladen voor Fact_Inkoop: {'new': 0, 'existing': 150}
+2026-04-16 23:40:16,310 | INFO | Fact geladen voor Fact_Verkoop: {'new': 0, 'existing': 251}
+2026-04-16 23:40:16,322 | INFO | Fact geladen voor Fact_Onderhoud: {'new': 0, 'existing': 50}
+2026-04-16 23:40:16,324 | INFO | ETL succesvol afgerond
+2026-04-16 23:40:16,328 | INFO | ETL-proces succesvol afgerond. Overzicht wordt getoond.

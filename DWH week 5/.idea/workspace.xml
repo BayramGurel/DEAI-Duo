@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8e1fdbfb-4979-4f13-b2e0-b15b255ab9ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../DWH week 4/ETL Schema.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/../DWH week 4/ETL Schema.vpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DWH week 5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DWH week 5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ETL_sdm-naar-dws.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ETL_sdm-naar-dws.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/DWH.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/DWH.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3BitWvEmvJxF6JSlNWUezwp7rRW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,8 +32,12 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Bayra/Documents/GitHub/DEAI-Duo/DWH week 5",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -47,6 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1774983753567</updated>
       <workItem from="1774983754873" duration="25000" />
+      <workItem from="1776374851152" duration="628000" />
     </task>
     <servers />
   </component>
