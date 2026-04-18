@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e1fdbfb-4979-4f13-b2e0-b15b255ab9ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DWH week 5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DWH week 5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ETL_sdm-naar-dws.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ETL_sdm-naar-dws.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/DWH.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/DWH.db" afterDir="false" />
-    </list>
+    <list default="true" id="8e1fdbfb-4979-4f13-b2e0-b15b255ab9ed" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +26,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dev",
     "last_opened_file_path": "C:/Users/Bayra/Documents/GitHub/DEAI-Duo/DWH week 5",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -59,6 +53,7 @@
       <updated>1774983753567</updated>
       <workItem from="1774983754873" duration="25000" />
       <workItem from="1776374851152" duration="628000" />
+      <workItem from="1776518112348" duration="43000" />
     </task>
     <servers />
   </component>
