@@ -1,0 +1,21 @@
+2026-04-22 13:53:20 | INFO | ETL-proces wordt gestart. Dit kan even duren bij grotere datasets.
+2026-04-22 13:53:20 | INFO | ETL gestart | bron=C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db | doel=C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-22 13:53:20 | INFO | Start schema-initialisatie voor: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-22 13:53:20 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-22 13:53:20 | INFO | Schema-initialisatie gereed voor: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-22 13:53:20 | INFO | Start extractie uit bron: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db
+2026-04-22 13:53:20 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\SDM.db
+2026-04-22 13:53:20 | INFO | Extractie afgerond: 10 tabellen opgebouwd
+2026-04-22 13:53:20 | INFO | Databaseverbinding geopend: C:\Users\Bayra\Documents\GitHub\DEAI-Duo\DWH week 5\database\DWH.db
+2026-04-22 13:53:20 | INFO | SCD1 geladen voor Dim_Datum: {'new': 0, 'changed': 0, 'unchanged': 202}
+2026-04-22 13:53:20 | INFO | SCD1 geladen voor Dim_Tijd: {'new': 0, 'changed': 0, 'unchanged': 9}
+2026-04-23 13:53:20 | INFO | SCD1 geladen voor Dim_Partner: {'new': 0, 'changed': 0, 'unchanged': 15}
+2026-04-22 13:53:20 | INFO | SCD1 geladen voor Dim_Filiaal: {'new': 0, 'changed': 0, 'unchanged': 5}
+2026-04-22 13:53:20 | INFO | SCD1 geladen voor Dim_Monteur: {'new': 0, 'changed': 0, 'unchanged': 15}
+2026-04-22 13:53:21 | INFO | SCD2 geladen voor Dim_Product: {'new': 0, 'changed': 0, 'unchanged': 88}
+2026-04-22 13:53:21 | INFO | SCD2 geladen voor Dim_Klant: {'new': 0, 'changed': 0, 'unchanged': 25}
+2026-04-22 13:53:21 | INFO | Fact geladen voor Fact_Inkoop: {'new': 0, 'existing': 150}
+2026-04-22 13:53:21 | INFO | Fact geladen voor Fact_Verkoop: {'new': 0, 'existing': 252}
+2026-04-22 13:53:21 | INFO | Fact geladen voor Fact_Onderhoud: {'new': 0, 'existing': 50}
+2026-04-22 13:53:21 | INFO | ETL succesvol afgerond
+2026-04-22 13:53:21 | INFO | ETL-proces succesvol afgerond. Overzicht wordt getoond.

@@ -1,0 +1,16 @@
+2026-04-22 14:01:34 | INFO     | __main__:<module>:19 - SDM-laadproces gestart. Vereiste bibliotheken zijn geïmporteerd.
+2026-04-22 14:01:34 | WARNING  | __main__:<module>:2 - Full Refresh-strategie geactiveerd: Foreign Key-beperkingen zijn tijdelijk uitgeschakeld.
+2026-04-22 14:01:34 | INFO     | __main__:<module>:13 - Alle SDM-doeltabellen succesvol gewist (DELETE FROM). Foreign Key-beperkingen zijn weer geactiveerd.
+2026-04-22 14:01:35 | INFO     | __main__:<module>:2 - Gegevensoverdracht van brondatabases naar het SDM met de 'String-built SQL'-strategie begint.
+2026-04-22 14:01:35 | INFO     | __main__:<module>:28 - Gegevensoverdracht (Load) voltooid en wijzigingen zijn vastgelegd (commit).
+2026-04-22 14:01:35 | INFO     | __main__:<module>:1 - Validatie van het aantal rijen van de overgedragen gegevens wordt gestart.
+2026-04-22 14:01:35 | INFO     | __main__:<module>:1 - Alle verbindingen met bron- en doeldatabases worden gesloten.
+2026-04-22 14:01:35 | INFO     | __main__:<module>:8 - Het SDM-datalaadproces is succesvol en zonder fouten voltooid.
+2026-04-22 14:01:46 | INFO     | __main__:<module>:19 - SDM-laadproces gestart. Vereiste bibliotheken zijn geïmporteerd.
+2026-04-22 14:01:47 | WARNING  | __main__:<module>:2 - Full Refresh-strategie geactiveerd: Foreign Key-beperkingen zijn tijdelijk uitgeschakeld.
+2026-04-22 14:01:47 | INFO     | __main__:<module>:13 - Alle SDM-doeltabellen succesvol gewist (DELETE FROM). Foreign Key-beperkingen zijn weer geactiveerd.
+2026-04-22 14:01:47 | INFO     | __main__:<module>:2 - Gegevensoverdracht van brondatabases naar het SDM met de 'String-built SQL'-strategie begint.
+2026-04-22 14:01:47 | INFO     | __main__:<module>:28 - Gegevensoverdracht (Load) voltooid en wijzigingen zijn vastgelegd (commit).
+2026-04-22 14:01:47 | INFO     | __main__:<module>:1 - Validatie van het aantal rijen van de overgedragen gegevens wordt gestart.
+2026-04-22 14:01:47 | INFO     | __main__:<module>:1 - Alle verbindingen met bron- en doeldatabases worden gesloten.
+2026-04-22 14:01:47 | INFO     | __main__:<module>:8 - Het SDM-datalaadproces is succesvol en zonder fouten voltooid.
