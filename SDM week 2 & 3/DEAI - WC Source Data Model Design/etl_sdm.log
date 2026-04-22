@@ -1,0 +1,55 @@
+2026-04-22 13:32:12 | INFO     | __main__:<module>:19 - SDM-laadproces gestart. Vereiste bibliotheken zijn geïmporteerd.
+2026-04-22 13:32:15 | INFO     | __main__:<module>:19 - SDM-laadproces gestart. Vereiste bibliotheken zijn geïmporteerd.
+2026-04-22 13:32:15 | WARNING  | __main__:<module>:2 - Full Refresh-strategie geactiveerd: Foreign Key-beperkingen zijn tijdelijk uitgeschakeld.
+2026-04-22 13:32:15 | INFO     | __main__:<module>:13 - Alle SDM-doeltabellen succesvol gewist (DELETE FROM). Foreign Key-beperkingen zijn weer geactiveerd.
+2026-04-22 13:32:15 | INFO     | __main__:<module>:2 - Gegevensoverdracht van brondatabases naar het SDM met de 'String-built SQL'-strategie begint.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoire_inkoop.Leverancier -> Accessoire_Inkoop_Leverancier overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoire_inkoop.Accessoire -> Accessoire_Inkoop_Accessoire overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoire_inkoop.Accessoire_Inkoop -> Accessoire_Inkoop overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoireverkoop.Filiaal -> Accessoireverkoop_Filiaal overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoireverkoop.Leverancier -> Accessoireverkoop_Leverancier overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoireverkoop.Klant -> Accessoireverkoop_Klant overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoireverkoop.Monteur -> Accessoireverkoop_Monteur overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoireverkoop.Accessoire -> Accessoireverkoop_Accessoire overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - accessoireverkoop.Accessoire_Verkoop -> Accessoireverkoop_Accessoire_Verkoop overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - onderhoud.Fabrikant -> Onderhoud_Fabrikant overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - onderhoud.Filiaal -> Onderhoud_Filiaal overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - onderhoud.Fiets -> Onderhoud_Fiets overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - onderhoud.Monteur -> Onderhoud_Monteur overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - onderhoud.Onderhoud -> Onderhoud overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fiets_inkoop.Fabrikant -> Fiets_Inkoop_Fabrikant overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fiets_inkoop.Fiets -> Fiets_Inkoop_Fiets overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fiets_inkoop.Fiets_Inkoop -> Fiets_Inkoop overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fietsverkoop.Filiaal -> Fietsverkoop_Filiaal overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fietsverkoop.Klant -> Fietsverkoop_Klant overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fietsverkoop.Fabrikant -> Fietsverkoop_Fabrikant overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fietsverkoop.Monteur -> Fietsverkoop_Monteur overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fietsverkoop.Fiets -> Fietsverkoop_Fiets overdracht voltooid.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:25 - fietsverkoop.Fiets_Verkoop -> Fietsverkoop_Fiets_Verkoop overdracht voltooid.
+2026-04-22 13:32:15 | INFO     | __main__:<module>:28 - Gegevensoverdracht (Load) voltooid en wijzigingen zijn vastgelegd (commit).
+2026-04-22 13:32:15 | INFO     | __main__:<module>:1 - Validatie van het aantal rijen van de overgedragen gegevens wordt gestart.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoire_Inkoop_Leverancier bevatte 5 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoire_Inkoop_Accessoire bevatte 13 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoire_Inkoop bevatte 50 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoireverkoop_Filiaal bevatte 4 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoireverkoop_Klant bevatte 20 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoireverkoop_Leverancier bevatte 5 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoireverkoop_Accessoire bevatte 10 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoireverkoop_Monteur bevatte 10 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Accessoireverkoop_Accessoire_Verkoop bevatte 100 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Onderhoud_Fabrikant bevatte 11 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Onderhoud_Fiets bevatte 30 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Onderhoud_Filiaal bevatte 5 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Onderhoud_Monteur bevatte 15 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Onderhoud bevatte 50 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fiets_Inkoop_Fabrikant bevatte 10 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fiets_Inkoop_Fiets bevatte 75 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fiets_Inkoop bevatte 100 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fietsverkoop_Filiaal bevatte 4 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fietsverkoop_Klant bevatte 25 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fietsverkoop_Monteur bevatte 10 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fietsverkoop_Fabrikant bevatte 10 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fietsverkoop_Fiets bevatte 75 rijen.
+2026-04-22 13:32:15 | DEBUG    | __main__:<module>:16 - Validatieresultaat: Fietsverkoop_Fiets_Verkoop bevatte 150 rijen.
+2026-04-22 13:32:15 | INFO     | __main__:<module>:1 - Alle verbindingen met bron- en doeldatabases worden gesloten.
+2026-04-22 13:32:15 | INFO     | __main__:<module>:8 - Het SDM-datalaadproces is succesvol en zonder fouten voltooid.
